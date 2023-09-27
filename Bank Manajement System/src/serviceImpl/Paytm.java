@@ -6,7 +6,7 @@ import java.util.Scanner;
 import model.Account;
 public class Paytm extends Account implements RBI {
 //Account a=new Account();
-	double balance;
+double balance=0;
 
 Scanner sc=new Scanner(System.in);
 public void createAccount() {
@@ -30,11 +30,12 @@ setGender(sc.next());
 System.out.println("Enter your age");
 setAge(sc.nextByte());
 //balance
-//System.out.println("Enter money for backup account");
+System.out.println("Enter money for backup account");
 //double balance=0;
 //
 double s=(sc.nextDouble());
-
+setBalance(s);
+System.out.println("Your Account Create Succesfully");
 
 }
 public void displayAllDetails() {
@@ -48,7 +49,7 @@ public void displayAllDetails() {
 }
 public void depositeMoney(double money) {
 	//System.out.println("Enter Amount of Deposit");
-	balance=balance+money;
+	balance=getBalance()+money;
 	setBalance(balance);
 	System.out.println("Your Deposit Succesful");
 	System.out.println("Your Account Balance:-"+getBalance());
@@ -58,7 +59,7 @@ public void depositeMoney(double money) {
 public void withdrawal(double money) {
 	//System.out.println("Enter Amount of Withdral");
 	if(money<=balance) {
-	balance=balance-money;
+	balance=getBalance()-money;
 	setBalance(balance);
 	System.out.println("Your Withdrawal Succesful");
 	System.out.println("Your Remaining Balance:-"+getBalance());

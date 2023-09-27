@@ -7,7 +7,7 @@ private String mobNo;
 private String addharNo;
 private String gender;
 private byte age;
-private double balance=1000;
+private double balance;
 public long getAccNo() {
 	return accNo;
 }
